@@ -53,8 +53,17 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            <Button
+              variant="default"
+              asChild
+              className="bg-gradient-to-r from-cyan/90 to-purple/90 hover:opacity-90 text-white font-medium"
+            >
+              <a href="/Aman-Singh-CV.pdf" target="_blank" rel="noopener noreferrer">
+                CV
+              </a>
+            </Button>
             <Button 
               className="bg-gradient-to-r from-cyan to-purple hover:opacity-90 text-white font-medium"
               onClick={() => window.open('mailto:amansingh22745@gmail.com')}
@@ -87,12 +96,23 @@ export default function Navigation() {
                 {link.name}
               </a>
             ))}
-            <Button 
-              className="w-full bg-gradient-to-r from-cyan to-purple text-white mt-4"
-              onClick={() => window.open('mailto:amansingh22745@gmail.com')}
-            >
-              Hire Me
-            </Button>
+            <div className="grid grid-cols-2 gap-3 mt-4">
+              <Button
+                variant="default"
+                asChild
+                className="bg-gradient-to-r from-cyan/90 to-purple/90 hover:opacity-90 text-white"
+              >
+                <a href="/Aman-Singh-CV.pdf" target="_blank" rel="noopener noreferrer">
+                  CV
+                </a>
+              </Button>
+              <Button
+                className="bg-gradient-to-r from-cyan to-purple text-white"
+                onClick={() => window.open('mailto:amansingh22745@gmail.com')}
+              >
+                Hire Me
+              </Button>
+            </div>
           </div>
         </div>
       )}

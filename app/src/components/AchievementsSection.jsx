@@ -2,6 +2,33 @@ import { Award } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 
 export default function AchievementsSection() {
+  const certifications = [
+    {
+      title: 'Postman API Fundamentals',
+      issuer: 'POSTMAN',
+      description: 'Certificate focused on API fundamentals, request workflows, and testing basics.',
+      cardGradient: 'from-orange-500/20 via-amber-500/10 to-cyan/10',
+      borderColor: 'border-orange-400/30',
+      issuerColor: 'text-orange-300'
+    },
+    {
+      title: 'Prompt Engineering ChatGpt-4',
+      issuer: 'INFOSYS',
+      description: 'Certificate covering prompt design patterns and practical AI-assisted problem solving.',
+      cardGradient: 'from-cyan/20 via-blue-500/10 to-purple/15',
+      borderColor: 'border-cyan/30',
+      issuerColor: 'text-cyan'
+    },
+    {
+      title: 'Cloud Computing',
+      issuer: 'NEPTEL',
+      description: 'Certificate focused on core cloud concepts, service models, and distributed systems basics.',
+      cardGradient: 'from-indigo-500/20 via-purple/15 to-sky-500/10',
+      borderColor: 'border-indigo-400/30',
+      issuerColor: 'text-indigo-300'
+    }
+  ]
+
   return (
     <section id="achievements" className="py-20 md:py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,6 +55,27 @@ export default function AchievementsSection() {
                 "A Method for Integrated Steering Wheel-Based Driver Safety Monitoring" - Officially accepted with IPR filing request and subsequent application submission on the Government Intellectual Property Portal.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Certifications */}
+        <div className="mt-12">
+          <div className="flex justify-center mb-6">
+            <Badge variant="outline" className="border-cyan/30 text-cyan">
+              Certifications
+            </Badge>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {certifications.map((cert) => (
+              <div
+                key={cert.title}
+                className={`p-6 rounded-2xl bg-gradient-to-br ${cert.cardGradient} border ${cert.borderColor} hover:scale-[1.02] transition-all duration-300`}
+              >
+                <h3 className="text-lg font-semibold text-white mb-1">{cert.title}</h3>
+                <p className={`${cert.issuerColor} text-sm mb-3`}>{cert.issuer}</p>
+                <p className="text-gray-300 text-sm leading-relaxed">{cert.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
