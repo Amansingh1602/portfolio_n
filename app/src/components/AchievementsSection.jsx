@@ -7,6 +7,7 @@ export default function AchievementsSection() {
       title: 'Postman API Fundamentals',
       issuer: 'POSTMAN',
       description: 'Certificate focused on API fundamentals, request workflows, and testing basics.',
+      certificateUrl: 'https://github.com/Amansingh1602/Postman_api/blob/main/Screenshot%202025-09-19%20103629.png',
       cardGradient: 'from-orange-500/20 via-amber-500/10 to-cyan/10',
       borderColor: 'border-orange-400/30',
       issuerColor: 'text-orange-300'
@@ -15,6 +16,7 @@ export default function AchievementsSection() {
       title: 'Prompt Engineering ChatGpt-4',
       issuer: 'INFOSYS',
       description: 'Certificate covering prompt design patterns and practical AI-assisted problem solving.',
+      certificateUrl: 'https://github.com/Amansingh1602/prompt_engineering/blob/main/Screenshot%202025-12-24%20104558.png',
       cardGradient: 'from-cyan/20 via-blue-500/10 to-purple/15',
       borderColor: 'border-cyan/30',
       issuerColor: 'text-cyan'
@@ -23,6 +25,7 @@ export default function AchievementsSection() {
       title: 'Cloud Computing',
       issuer: 'NEPTEL',
       description: 'Certificate focused on core cloud concepts, service models, and distributed systems basics.',
+      certificateUrl: 'https://github.com/Amansingh1602/Neptel_cloud/blob/main/d3228a5a-c507-44c1-9bb9-cd42d6e1ff70.jpg',
       cardGradient: 'from-indigo-500/20 via-purple/15 to-sky-500/10',
       borderColor: 'border-indigo-400/30',
       issuerColor: 'text-indigo-300'
@@ -67,14 +70,17 @@ export default function AchievementsSection() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {certifications.map((cert) => (
-              <div
+              <a
                 key={cert.title}
+                href={cert.certificateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`p-6 rounded-2xl bg-gradient-to-br ${cert.cardGradient} border ${cert.borderColor} hover:scale-[1.02] transition-all duration-300`}
               >
                 <h3 className="text-lg font-semibold text-white mb-1">{cert.title}</h3>
                 <p className={`${cert.issuerColor} text-sm mb-3`}>{cert.issuer}</p>
                 <p className="text-gray-300 text-sm leading-relaxed">{cert.description}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
